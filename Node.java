@@ -47,11 +47,12 @@ public class Node<T> implements Comparable<Node>
 	}
 
 	//LC
-	public int getWeight(int oneTargetNode)
+	//gets the weight from this target node to oneTargetNode
+	public int getWght(int oneTargetNode)
 	{
-		int weight; 
-		//take the source and get the weight of the edge to the oneTargetNode
-		weight = outEdges.get(oneTargetNode).getWeight();
+		int weight = 0; 
+		//take the source and get the weight of an edge from the source node to oneTargetNode
+		weight = this.outEdges.get(oneTargetNode).getWeight();
 
 		return weight;
 	}
@@ -68,6 +69,10 @@ public class Node<T> implements Comparable<Node>
 		predecessor = pred;
 	}
 
+	public Node getPredecessor()
+	{
+		return predecessor; 
+	}
 
 	//how to prioritize nodes??
 	public int getLengthOfPath()
