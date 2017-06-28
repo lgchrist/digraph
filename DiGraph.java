@@ -187,6 +187,11 @@ public class DiGraph<T>
 
 		//get indexes for the target nodes use 
 		//nodesInt -> nodes
+		//If there are no target nodes
+		if (edgeMap.get(source).size() == 0) 
+		{
+			return targetNodes;
+		}
 		//will keep looping the size of the ArrayList from edgeMap
 		for(int i = 0; i < edgeMap.get(source).size(); i++)
 		{
